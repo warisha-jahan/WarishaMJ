@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+      (function() {
+        emailjs.init("_5OltJ1IQHainEfe4");  // Replace with your EmailJS public key
+      })();
+    </script>
+</head>
+
+<body>
+    <div class="page">
+        
+     
+        <div class="plant">
+            <img src="Img/plant.png">
+        </div>
+
+        <div class="form-container">
+            <form id="contact-form">
+                <h1>Contact Form</h1>
+                <div class="row">
+                    <div class="input_box">
+                        <label for="first_name">First Name</label>
+                        <input type="text" id="first_name" name="first_name" placeholder="Enter Your First Name"
+                            required>
+                    </div>
+                    <div class="input_box">
+                        <label for="last_name">Last Name</label>
+                        <input type="text" id="last_name" name="last_name" placeholder="Enter Your Last Name" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input_box">
+                        <label for="email">Business Email</label>
+                        <input type="email" id="email" name="email" placeholder="Enter Your Email" required>
+                    </div>
+                    <div class="input_box">
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Enter Your Phone Number">
+                    </div>
+                </div>
+
+                <div class="full-row">
+                    <div class="input_box">
+                        <label for="job">Job Title</label>
+                        <input type="text" id="job" name="job" placeholder="Enter Your Job Title">
+                    </div>
+                </div>
+
+                <div class="full-row">
+                    <div class="input_box">
+                        <input type="submit" value="Submit">
+                    </div>
+                </div>
+            </form>
+
+            <!-- Include EmailJS SDK -->
+
+            <script>
+                // Function to send the email
+                document.getElementById('contact-form').addEventListener('submit', function(event) {
+                  event.preventDefault(); // Prevent default form submission
+              
+                  // Send the form data using EmailJS
+                  emailjs.sendForm('service_1e335bq', 'template_axnckyq', this)
+                    .then(function() {
+                        alert('Email sent successfully!');
+                    }, function(error) {
+                        alert('Failed to send email, please try again.');
+                    });
+                });
+              </script>
+        </div>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+        integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
